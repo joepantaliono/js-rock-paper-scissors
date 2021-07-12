@@ -1,6 +1,6 @@
 function computerPlay() {
     let choices = ['rock', 'paper', 'scissors'];
-    return choices[Math.floor(Math.random()*choices.length)]; // return largest int less than or equal to random num * 3
+    return choices[Math.floor(Math.random()*choices.length)];
 }
 
 
