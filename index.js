@@ -49,11 +49,24 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function convertComputerSelection(computerSelection) {
+    if (computerSelection === 'rock') {
+        computerSelection = '&#129308;'
+    }
+    else if (computerSelection === 'paper') {
+        computerSelection = '&#128400;'
+    }
+    else if (computerSelection === 'scissors') {
+        computerSelection = '&#9996;'
+    }
+    return computerSelection
+}
+
 document.getElementById("rock").addEventListener("click", function() {
     let computerSelection = computerPlay();
     document.getElementById("result").innerHTML = playRound("rock", computerSelection);
-    document.getElementById("player-selection").innerHTML = "Your choice: rock";
-    document.getElementById("computer-selection").innerHTML = `Computer's choice: ${computerSelection}`;
+    document.getElementById("player-selection").innerHTML = "Your choice: &#129308;";
+    document.getElementById("computer-selection").innerHTML = `Computer's choice: ${convertComputerSelection(computerSelection)}`;
     updateScore();
     resetCheck();
 });
@@ -61,8 +74,8 @@ document.getElementById("rock").addEventListener("click", function() {
 document.getElementById("paper").addEventListener("click", function() {
     let computerSelection = computerPlay();
     document.getElementById("result").innerHTML = playRound("paper", computerSelection);
-    document.getElementById("player-selection").innerHTML = "Your choice: paper";
-    document.getElementById("computer-selection").innerHTML = `Computer's choice: ${computerSelection}`;
+    document.getElementById("player-selection").innerHTML = "Your choice: &#128400;";
+    document.getElementById("computer-selection").innerHTML = `Computer's choice: ${convertComputerSelection(computerSelection)}`;
     updateScore();
     resetCheck();
 });
@@ -70,8 +83,8 @@ document.getElementById("paper").addEventListener("click", function() {
 document.getElementById("scissors").addEventListener("click", function() {
     let computerSelection = computerPlay();
     document.getElementById("result").innerHTML = playRound("scissors", computerSelection);
-    document.getElementById("player-selection").innerHTML = "Your choice: scissors";
-    document.getElementById("computer-selection").innerHTML = `Computer's choice: ${computerSelection}`;
+    document.getElementById("player-selection").innerHTML = "Your choice: &#9996;";
+    document.getElementById("computer-selection").innerHTML = `Computer's choice: ${convertComputerSelection(computerSelection)}`;
     updateScore();
     resetCheck();
 });
