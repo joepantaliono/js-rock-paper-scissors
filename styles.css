@@ -13,6 +13,9 @@ body {
     vertical-align: middle;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+    animation: fadeInAnimation ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 h2 {
@@ -60,4 +63,14 @@ button:hover {
 
 #computer-selection {
     padding-bottom: 5px;
+}
+
+@keyframes fadeInAnimation {
+    /* keyframes control steps of animation */
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
